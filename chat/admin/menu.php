@@ -19,7 +19,6 @@ $adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_HOME_DESC;
 $adminmenu[$i]["icon"] =  '../../'.$pathImageAdmin.'/home.png';
 $i++;
 
-
 // История сообщений
 //$adminmenu[$i]['title'] = _MI_CHAT_ADMIN_HISTORY;
 //$adminmenu[$i]['link'] = "admin/history.php";
@@ -34,14 +33,9 @@ $adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_PERM_DESC;
 $adminmenu[$i]['icon'] = '../../'.$pathImageAdmin.'/permissions.png';
 $i++;
 
-
 //
 $adminmenu[$i]["title"] = _MI_CHAT_ADMIN_ABOUT;
 $adminmenu[$i]["link"]  = "admin/about.php";
 $adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_ABOUT_DESC;
 $adminmenu[$i]["icon"] =  '../../'.$pathImageAdmin.'/about.png';
 $i++;
-
-
-
-?>

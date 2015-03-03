@@ -13,5 +13,3 @@ define("_AM_CHAT_PERM_2", "Permissions to delete messages");
 define("_AM_CHAT_BC_PERM", "Permissions");
 
 define("_AM_CHAT_MODULEADMIN_MISSING", "Not found ModuleAdmin framework");
-
-?>
