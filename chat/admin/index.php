@@ -38,5 +38,4 @@ $GLOBALS['xoopsTpl']->display("db:chat_admin_index.html");
 // Подвал админки
 xoops_cp_footer();
 
-*/
-?>
+*/;

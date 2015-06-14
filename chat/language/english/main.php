@@ -14,6 +14,5 @@ define("_MD_CHAT_SMILES", "Smiles");
 define("_MD_CHAT_CONFIRMDELETE", "Remove this message?");
 define("_MD_CHAT_DELETE", "Delete");
 
-
 //<{$smarty.const._MD_CHAT_LOADING}>
-?>
+;

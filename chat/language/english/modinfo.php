@@ -28,5 +28,3 @@ define("_MI_CHAT_TTLONLINE", "Time of Users Online");
 define("_MI_CHAT_TTLONLINEDSC", "Enter the time in seconds after which the 'dead', users will be removed from the list online. <br /> <strong> Important: </strong> this time should be longer than the refresh rate is a chat");
 define("_MI_CHAT_TIMESLEEP", "Timeout for inactive users");
 define("_MI_CHAT_TIMESLEEPDSC", "Enter the time in seconds after which inactive users will get the status' Not active'");
-
-?>

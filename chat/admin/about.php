@@ -16,5 +16,3 @@ echo $aboutAdmin->renderabout('', false);
 include 'admin_footer.php';
 //
 xoops_cp_footer();
-
-?>

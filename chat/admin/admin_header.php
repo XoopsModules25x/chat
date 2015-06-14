@@ -11,10 +11,9 @@ if ( file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/
         include_once $GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php');
         //return true;
     }else{
-        redirect_header("../../../admin.php", 5, _AM_CHAT_MODULEADMIN_MISSING, false); 
+        redirect_header("../../../admin.php", 5, _AM_CHAT_MODULEADMIN_MISSING, false);
         //return false;
     }
-
 
 $moduleInfo =& $module_handler->get($xoopsModule->getVar('mid'));
 $pathImageIcon = XOOPS_URL .'/'. $moduleInfo->getInfo('icons16');
@@ -34,8 +33,8 @@ if ($xoopsUser) {
 }
 
 if (!isset($xoopsTpl) || !is_object($xoopsTpl)) {
-	include_once(XOOPS_ROOT_PATH."/class/template.php");
-	$xoopsTpl = new XoopsTpl();
+    include_once(XOOPS_ROOT_PATH."/class/template.php");
+    $xoopsTpl = new XoopsTpl();
 }
 
 //xoops_cp_header();
@@ -47,5 +46,3 @@ if (!isset($xoopsTpl) || !is_object($xoopsTpl)) {
 xoops_loadLanguage('admin', $xoopsModule->getVar("dirname"));
 xoops_loadLanguage('modinfo', $xoopsModule->getVar("dirname"));
 xoops_loadLanguage('main', $xoopsModule->getVar("dirname"));
-
-?>

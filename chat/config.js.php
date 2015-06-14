@@ -59,13 +59,11 @@ var chat_lang_errors = [];
 ';
 // Перебираем все ошибки
 foreach( $errors as $err_key => $err_val ){
-	
-	$js .= 'chat_lang_errors[' . $err_key . '] = "' . $err_val . '";
+    
+    $js .= 'chat_lang_errors[' . $err_key . '] = "' . $err_val . '";
 ';
-	
+    
 }
 
 //
 echo $js;
-
-?>

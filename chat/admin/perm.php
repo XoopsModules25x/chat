@@ -28,7 +28,7 @@ $moduleId = $xoopsModule->getVar( 'mid' );
 $permForm = new XoopsGroupPermForm( $formTitle, $moduleId, $permName, $permDsc, 'admin/perm.php');
 // Забиваем все права
 foreach( $perms_array as $perm_id => $perm_name ) {
-	$permForm->addItem($perm_id , $perm_name) ;
+    $permForm->addItem($perm_id , $perm_name) ;
 }
 
 echo $permForm->render();
@@ -39,5 +39,3 @@ unset ( $permForm );
 include "admin_footer.php";
 //
 xoops_cp_footer();
-
-?>
