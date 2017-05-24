@@ -7,7 +7,7 @@ include dirname(__FILE__) . DIRECTORY_SEPARATOR . 'header.php';
 // Отключаем дебугер
 $GLOBALS['xoopsLogger']->activated = false;
 
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 $act = isset($_POST['act']) ? $myts->addSlashes($_POST['act']) : '';
 
 // Данные о пользователе
