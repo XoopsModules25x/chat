@@ -3,39 +3,43 @@
 // Автор: andrey3761
 // Копирайт: xoops.ws
 
-$module_handler =& xoops_gethandler('module');
-$xoopsModule =& XoopsModule::getByDirname('chat');
-$moduleInfo =& $module_handler->get($xoopsModule->getVar('mid'));
-//$pathImageAdmin = XOOPS_URL .'/'. $moduleInfo->getInfo('dirmoduleadmin').'/images/admin';
-$pathImageAdmin = $moduleInfo->getInfo('icons32');
+use XoopsModules\Chat;
 
-$adminmenu = array();
+//require_once  dirname(__DIR__) . '/include/common.php';
+/** @var \XoopsModules\Chat\Helper $helper */
+$helper = \XoopsModules\Chat\Helper::getInstance();
 
-$i = 1;
-// Административное меню
-$adminmenu[$i]['title'] = _MI_CHAT_ADMIN_HOME;
-$adminmenu[$i]['link'] = "admin/index.php";
-$adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_HOME_DESC;
-$adminmenu[$i]["icon"] =  '../../'.$pathImageAdmin.'/home.png';
-$i++;
+$pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
+if (is_object($helper->getModule())) {
+    $pathModIcon32 = $helper->getModule()->getInfo('modicons32');
+}
+
+$adminmenu[] = [
+    // Административное меню
+    'title' => _MI_CHAT_ADMIN_HOME,
+    'link'  => 'admin/index.php',
+    'desc'  => _MI_CHAT_ADMIN_HOME_DESC,
+    'icon'  => '../../' . $pathIcon32 . '/home.png',
+];
 
 // История сообщений
-//$adminmenu[$i]['title'] = _MI_CHAT_ADMIN_HISTORY;
-//$adminmenu[$i]['link'] = "admin/history.php";
+//'title' =>  _MI_CHAT_ADMIN_HISTORY,
+//'link' =>  "admin/history.php",
 //$adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_HISTORY_DESC;
-//$adminmenu[$i]["icon"] =  '../../'.$pathImageAdmin.'/home.png';
-//$i++;
+//$adminmenu[$i]["icon"] =  '../../'.$pathIcon32.'/home.png';
+//++$i;
 
 // Права доступа
-$adminmenu[$i]['title'] = _MI_CHAT_ADMIN_PERM;
-$adminmenu[$i]['link'] = "admin/perm.php";
-$adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_PERM_DESC;
-$adminmenu[$i]['icon'] = '../../'.$pathImageAdmin.'/permissions.png';
-$i++;
+$adminmenu[] = [
+    'title' => _MI_CHAT_ADMIN_PERM,
+    'link'  => 'admin/perm.php',
+    'desc'  => _MI_CHAT_ADMIN_PERM_DESC,
+    'icon'  => '../../' . $pathIcon32 . '/permissions.png',
+];
 
-//
-$adminmenu[$i]["title"] = _MI_CHAT_ADMIN_ABOUT;
-$adminmenu[$i]["link"]  = "admin/about.php";
-$adminmenu[$i]["desc"] = _MI_CHAT_ADMIN_ABOUT_DESC;
-$adminmenu[$i]["icon"] =  '../../'.$pathImageAdmin.'/about.png';
-$i++;
+$adminmenu[] = [
+    'title' => _MI_CHAT_ADMIN_ABOUT,
+    'link'  => 'admin/about.php',
+    'desc'  => _MI_CHAT_ADMIN_ABOUT_DESC,
+    'icon'  => '../../' . $pathIcon32 . '/about.png',
+];
