@@ -2,40 +2,40 @@
 
 // Автор: andrey3761
 // Копирайт: xoops.ws
- 
-include 'admin_header.php';
+
+require_once __DIR__ . '/admin_header.php';
 // Admin Gui
-$indexAdmin = new ModuleAdmin();
+$adminObject = \Xmf\Module\Admin::getInstance();
 
 // Подключаем форму прав
-include_once $GLOBALS['xoops']->path( 'class/xoopsform/grouppermform.php' );
+require_once $GLOBALS['xoops']->path('class/xoopsform/grouppermform.php');
 
 // Заголовок страницы
 xoops_cp_header();
 // Меню страницы
-echo $indexAdmin->addNavigation('perm.php');
+$adminObject->displayNavigation(basename(__FILE__));
 
-echo '<br /><br /><br />';
+echo '<br><br><br>';
 
-$formTitle = _AM_CHAT_FORM_PERM;
-$permName = "chat_perm";
-$permDsc = _AM_CHAT_PERM_DSC;
-$perms_array = array( 1 => _AM_CHAT_PERM_1 , 2 => _AM_CHAT_PERM_2 );
+$formTitle   = _AM_CHAT_FORM_PERM;
+$permName    = 'chat_perm';
+$permDsc     = _AM_CHAT_PERM_DSC;
+$perms_array = [1 => _AM_CHAT_PERM_1, 2 => _AM_CHAT_PERM_2];
 
-$moduleId = $xoopsModule->getVar( 'mid' );
+$moduleId = $xoopsModule->getVar('mid');
 
 // Права
-$permForm = new XoopsGroupPermForm( $formTitle, $moduleId, $permName, $permDsc, 'admin/perm.php');
+$permForm = new \XoopsGroupPermForm($formTitle, $moduleId, $permName, $permDsc, 'admin/perm.php');
 // Забиваем все права
-foreach( $perms_array as $perm_id => $perm_name ) {
-    $permForm->addItem($perm_id , $perm_name) ;
+foreach ($perms_array as $perm_id => $perm_name) {
+    $permForm->addItem($perm_id, $perm_name);
 }
 
 echo $permForm->render();
-echo "<br /><br /><br /><br />\n";
-unset ( $permForm );
+echo "<br><br><br><br>\n";
+unset($permForm);
 
 // Текст в подвале админки
-include "admin_footer.php";
-//
+require_once __DIR__ . '/admin_footer.php';
+
 xoops_cp_footer();

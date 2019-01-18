@@ -1,8 +1,8 @@
 <?php
 // Автор: andrey3761
 
+$pathIcon32 = \Xmf\Module\Admin::iconUrl('', 32);
 
-echo "<div align=\"center\"><a href=\"http://xoops.ws\" target=\"_blank\"><img src=" . XOOPS_URL ."/modules/chat/images/xoops.ws.gif"." alt=\"XOOPS.WebSite\" title=\"XOOPS.WebSite\"></a></div>";
-echo "<div class='center smallsmall italic pad5'><strong>" . $xoopsModule->getVar("name") . "</strong> is maintained by the <a class='tooltip' rel='external' href='http://www.xoops.org/' title='Visit XOOPS Community'>XOOPS Community</a></div>";
+echo "<div class='adminfooter'>\n" . "  <div style='text-align: center;'>\n" . "    <a href='https://xoops.org' rel='external'><img src='{$pathIcon32}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n" . "  </div>\n" . '  ' . _AM_MODULEADMIN_ADMIN_FOOTER . "\n" . '</div>';
 
-//xoops_cp_footer();
+xoops_cp_footer();
